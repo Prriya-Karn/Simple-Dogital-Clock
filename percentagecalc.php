@@ -89,7 +89,7 @@ img:hover{
 		<h1>Students Grade Calculator</h1>
 		<br><br>
 <div>
-	<img src="images/think3.png">
+	<img src="think3.png">
 		
 
 	</div>
