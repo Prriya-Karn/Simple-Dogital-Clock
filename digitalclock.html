@@ -1,0 +1,233 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>clock</title>
+	</head>
+
+<style>
+	body{
+		background-color: 	#008080 ;
+	}
+
+	html{
+/*font-size: 10px we want 1rem = 10px;*/
+
+	font-size: 62.5%;
+	}
+
+
+	.time{  
+/*10px = 1rem;
+20px = 1/10*20 */
+
+		border-radius: 2rem;
+		height: 30rem;
+		width: 40%;
+		margin: auto;
+		padding-top: 5rem;
+		margin-top: 10%;
+		background-color: white;
+	/*	box-shadow: 10px 10px 10px 10px solid teal*/
+		box-shadow: rgba(0, 0, 0, 0.35) -30px 30px 20px;
+		/*box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;*/
+		
+
+
+	}
+
+	#text{
+		text-align: center;
+		font-size: 4rem;
+		color: teal;
+		background-color: white;
+		width: 50%;
+		height: 40%;
+		margin: auto;
+		margin-top: 2rem;
+		padding: 2rem;
+
+
+	}
+
+	#demo{
+		color: black;
+		font-size: 5rem;
+		text-align: center;
+
+
+
+	}
+
+	#demo1{
+		color: black;
+		font-size: 5rem;
+		text-align: center;
+
+
+
+	}
+
+
+
+button{
+
+	width : 20%;
+    padding : 0.4rem;
+    font-weight: bold;
+	text-align: center;
+	font-size: 2rem;
+	color: teal;
+	margin: auto;
+	margin-left: 20%;
+	border-radius: 0.8rem;
+	border-color: teal;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.8s;
+
+
+
+
+}
+
+button:hover{
+  transform: scale(1.5,1.5);
+}
+
+   @media(max-width:998px){
+   	html{
+   		font-size: 55%;
+   	}
+   }     
+
+/*   @media(max-width:768px){
+
+html{
+	font-size: 45%;
+		
+}
+
+   }*/
+
+      @media(max-width:570px){
+
+html{
+	font-size: 20%;
+		
+}
+
+   }
+
+
+</style>	
+	<body>
+ <p id="text">DIGITAL CLOCK</p>
+<br><br><br><br><br><br>
+<div class="time">
+
+<div id="demo1">
+	Current Date
+</div>
+<br><br>
+<div id="demo">
+
+   Current Time
+    
+</div>
+
+
+<br><br><br><br>
+
+<button id="butt" onclick="set = setInterval(funexpr,1000)" >
+   Start
+</button>
+
+
+ 
+
+<button onclick="clearInterval(set)">
+    Stop
+</button>
+
+
+
+</div>
+
+
+
+
+<script>
+
+var funexpr = () => {
+    
+    var reference = document.getElementById('butt');
+    
+    let currTime = new Date();
+    
+    var a = document.getElementById('demo').innerHTML = `${currTime.toLocaleTimeString()}`
+    document.getElementById('demo').style.color = "teal"
+
+
+    document.getElementById('demo1').innerHTML = `${currTime.toLocaleDateString()}`;
+
+      document.getElementById('demo1').style.color = "teal"
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// const reference = document.getElementById('butt');      
+// reference.addEventListener('click',() => {           //time not working in addEventListener;
+
+   
+//     document.getElementById('demo').innerHTML = "Loading"
+//       let currTime = new Date()
+//     let a = setInterval(() => {
+//         document.getElementById('demo').innerHTML = `${currTime.toLocaleTimeString()}`;
+//         currTime++;
+         
+        
+//     },1000)                                                                                                                                                                             
+   
+// })
+
+
+// document.write("<br>")
+// let currTime = new Date();
+// document.write(currTime.toLocaleTimeString())
+    
+</script>
+
+	</body>
+	</html>
+
+
+
+	<!-- 100% = 16px; -->
+
+<!-- 16px = 100%
+10px = 100/16*10 => answer is: 62.5% -->
+
+
+
+<!-- 1rem = 16px by default browser manta hai -->
+
+<!-- 
+but we want easy calculation purpose 1rem = 10px ho jaye -->
+
+<!-- 1rem = 10px;  rem(root em)
+
+10px = 1rem;
+60px = 1/10*60 => answer is 6rem -->
+
